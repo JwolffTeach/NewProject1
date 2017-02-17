@@ -26,9 +26,10 @@ public class FollowMouse : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (FollowtheMouse || Input.GetMouseButton(0)) {
-            _target = Camera.ScreenToWorldPoint(Input.mousePosition);
-            _target.z = 0;
+            Debug.Log(Camera.ScreenToWorldPoint(Input.mousePosition));
         }
+        _target = Camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 2f, 1.35f));
+        _target.y = 0;
 
         var delta = ParticlesSpeed * Time.deltaTime;
         if (ParticlesAccelerates) {

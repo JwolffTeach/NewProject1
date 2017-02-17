@@ -9,6 +9,7 @@ public class CharacterController : MonoBehaviour {
     public float gameTime=0f;
     public float startTime;
     public bool ismoving = false;
+    public GameManager GM;
 
     // Use this for initialization
     void Start () {
@@ -45,5 +46,6 @@ public class CharacterController : MonoBehaviour {
         print("MyCoroutine is now finished.");
         ismoving = false;
         startTime = Time.time;
+        GM.hardRestartGame();
     }
 }
